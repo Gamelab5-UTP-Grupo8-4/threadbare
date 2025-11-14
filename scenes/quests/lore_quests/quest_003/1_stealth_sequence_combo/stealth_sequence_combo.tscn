@@ -17,7 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://c7om8kdork2rx" path="res://assets/third_party/sounds/characters/enemies/guard/Torch.ogg" id="9_00lb2"]
 [ext_resource type="Script" uid="uid://bgmwplmj3bfls" path="res://scenes/globals/game_state/inventory/inventory_item.gd" id="9_1l5nh"]
 [ext_resource type="AudioStream" uid="uid://bwif2oo6ymiu2" path="res://assets/third_party/sounds/characters/enemies/guard/TorchHit.ogg" id="10_f0rs2"]
-[ext_resource type="SpriteFrames" uid="uid://d1k25io0tiiij" path="res://scenes/game_elements/characters/enemies/guard/components/storyvoretorch_frames_blue.tres" id="11_bc7ib"]
+[ext_resource type="SpriteFrames" uid="uid://d1k25io0tiiij" path="res://scenes/quests/story_quests/story_quest_grupo_4/player_components/storyvoretorch_frames_blue.tres" id="11_bc7ib"]
 [ext_resource type="Script" uid="uid://c68oh8dtr21ti" path="res://scenes/game_logic/sequence_puzzle.gd" id="14_qhjva"]
 [ext_resource type="Resource" uid="uid://c6npgkuhqql7" path="res://scenes/quests/lore_quests/quest_003/1_stealth_sequence_combo/components/collected.dialogue" id="15_00lb2"]
 [ext_resource type="Script" uid="uid://ccc78coj2b1li" path="res://scenes/game_logic/sequence_puzzle_step.gd" id="15_aaq2u"]
