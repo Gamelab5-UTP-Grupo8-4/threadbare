@@ -110,7 +110,7 @@ editor_draw_limits = true
 y_sort_enabled = true
 
 [node name="Enemy" type="AnimatedSprite2D" parent="OnTheGround"]
-position = Vector2(-78, 312)
+position = Vector2(-200, 355)
 sprite_frames = ExtResource("3_cmyma")
 animation = &"walk"
 autoplay = "walk"
@@ -242,7 +242,6 @@ animation_player = NodePath("../OnTheGround/AnimationPlayer")
 next_scene = "uid://d0f07t8ncxp3v"
 player_path = NodePath("../OnTheGround/Character")
 enemy_path = NodePath("../OnTheGround/Enemy")
-entry_animation = "walk_on"
 metadata/_custom_type_script = "uid://x1mxt6bmei2o"
 
 [node name="Rock" parent="." instance=ExtResource("6_kxhp1")]

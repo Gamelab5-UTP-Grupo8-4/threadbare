@@ -18,8 +18,8 @@ signal cinematic_finished
 var player : Node
 var enemy : Node
 
-func _ready() -> void:
 
+func _ready() -> void:
 	# Solo cargamos player/enemy si realmente existen en esta escena
 	if player_path and has_node(player_path):
 		player = get_node(player_path)
@@ -27,11 +27,10 @@ func _ready() -> void:
 	if enemy_path and has_node(enemy_path):
 		enemy = get_node(enemy_path)
 
-	if dialogue and not GameState.minigame_intro_shown:
-		GameState.minigame_intro_shown = true
+	# Mostrar diálogo si existe
+	if dialogue:
 		DialogueManager.show_dialogue_balloon(dialogue, "", [self])
 		await DialogueManager.dialogue_ended
-	# ------------------------------
 
 	# Si hay enemigo y player, entonces es una escena con cinemática
 	if enemy and player:
