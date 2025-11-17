@@ -1,45 +1,63 @@
-# SPDX-FileCopyrightText: The Threadbare Authors
 # SPDX-License-Identifier: MPL-2.0
 class_name Cinematic
 extends Node2D
-## Shows a dialogue, then transitions to another scene.
-##
-## Intended for use in non-interactive cutscenes, such as the intro and outro to a quest.
-## It can also be used as an easy way to display dialogue at the beginning of a level.
 
-## Emitted when the cinematic has finished. Use it if not passing [member next_scene]
-## when you need to do something else after the cinematic.
 signal cinematic_finished
 
-## Dialogue for cinematic scene.
-@export var dialogue: DialogueResource = preload("uid://b7ad8nar1hmfs")
-
-## Optional animation player, to be used from [member dialogue] (if needed).
+@export var dialogue: DialogueResource
 @export var animation_player: AnimationPlayer
-
-## Optional scene to switch to once [member dialogue] is complete.
 @export_file("*.tscn") var next_scene: String
-
-## Optional path inside [member next_scene] where the player should appear.
-## If blank, player appears at default position in the scene. If in doubt,
-## leave this blank.
 @export var spawn_point_path: String
 
+# Opcionales (solo para escenas con intro)
+@export var player_path: NodePath
+@export var enemy_path: NodePath
+@export var entry_animation := "Intro"
+@export var enemy_speed := 900.0
+
+var player : Node
+var enemy : Node
 
 func _ready() -> void:
-	if not GameState.intro_dialogue_shown:
+
+	# Solo cargamos player/enemy si realmente existen en esta escena
+	if player_path and has_node(player_path):
+		player = get_node(player_path)
+
+	if enemy_path and has_node(enemy_path):
+		enemy = get_node(enemy_path)
+
+	if dialogue and not GameState.minigame_intro_shown:
+		GameState.minigame_intro_shown = true
 		DialogueManager.show_dialogue_balloon(dialogue, "", [self])
 		await DialogueManager.dialogue_ended
-		cinematic_finished.emit()
-		GameState.intro_dialogue_shown = true
+	# ------------------------------
 
+	# Si hay enemigo y player, entonces es una escena con cinemática
+	if enemy and player:
+		await _enemy_attack()
+
+	# Cuando ya acabó la cinemática (o solo diálogo)
+	cinematic_finished.emit()
+
+	# Cambio de escena si está configurado
 	if next_scene:
-		(
-			SceneSwitcher
-			. change_to_file_with_transition(
-				next_scene,
-				spawn_point_path,
-				Transition.Effect.FADE,
-				Transition.Effect.FADE,
-			)
+		SceneSwitcher.change_to_file_with_transition(
+			next_scene,
+			spawn_point_path,
+			Transition.Effect.FADE,
+			Transition.Effect.FADE
 		)
+
+
+func _enemy_attack() -> void:
+	# Si por alguna razón faltara algo → no hacer nada
+	if enemy == null or player == null:
+		return
+
+	enemy.position.x = -200
+	enemy.position.y = player.position.y
+
+	var tween := create_tween()
+	tween.tween_property(enemy, "position", player.position + Vector2(-80, 0), 0.2)
+	await tween.finished

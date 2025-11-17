@@ -1,14 +1,12 @@
-[gd_scene load_steps=34 format=4 uid="uid://d0f07t8ncxp3v"]
+[gd_scene load_steps=32 format=4 uid="uid://d0f07t8ncxp3v"]
 
 [ext_resource type="Script" uid="uid://dnp0tjloec2d7" path="res://scenes/game_logic/stealth_game_logic.gd" id="1_mw183"]
 [ext_resource type="TileSet" uid="uid://07fq3rspk8ia" path="res://scenes/tileset.tres" id="2_t0wgn"]
 [ext_resource type="PackedScene" uid="uid://iu2q66clupc6" path="res://scenes/game_elements/characters/player/player.tscn" id="3_8ukkw"]
-[ext_resource type="SpriteFrames" uid="uid://dc61fd3dh0hqh" path="res://scenes/quests/story_quests/story_quest_grupo_4/player_components/story_quest_grupo_4_player.tres" id="4_04e8i"]
 [ext_resource type="PackedScene" uid="uid://d37mebu7atru7" path="res://scenes/game_elements/characters/enemies/guard/guard.tscn" id="5_70m16"]
 [ext_resource type="SpriteFrames" uid="uid://d1k25io0tiiij" path="res://scenes/quests/story_quests/story_quest_grupo_4/player_components/storyvoretorch_frames_blue.tres" id="6_ssgbr"]
 [ext_resource type="PackedScene" uid="uid://dua6mynlw2ptw" path="res://scenes/game_elements/props/checkpoint/checkpoint.tscn" id="7_3ocuc"]
 [ext_resource type="SpriteFrames" uid="uid://dmls18v7n7g21" path="res://scenes/quests/story_quests/story_quest_grupo_4/player_components/storyvoretorch_frames_orange.tres" id="7_jvvfw"]
-[ext_resource type="Resource" uid="uid://fhpwdbneu7go" path="res://scenes/quests/story_quests/story_quest_grupo_4/1_stealth/stealth_components/story_quest_grupo_4_checkpoint.dialogue" id="8_jvvfw"]
 [ext_resource type="SpriteFrames" uid="uid://tchths61dylv" path="res://scenes/quests/story_quests/story_quest_grupo_4/player_components/storyvoretorch_frames_green.tres" id="8_t8s68"]
 [ext_resource type="PackedScene" uid="uid://cfcgrfvtn04yp" path="res://scenes/ui_elements/hud/hud.tscn" id="9_t8s68"]
 [ext_resource type="PackedScene" uid="uid://fuhl3l6gxq5k" path="res://scenes/game_elements/props/collectible_item/collectible_item.tscn" id="10_k67e4"]
@@ -124,7 +122,6 @@ tile_set = ExtResource("2_t0wgn")
 
 [node name="Player" parent="." instance=ExtResource("3_8ukkw")]
 position = Vector2(254, 1622)
-sprite_frames = ExtResource("4_04e8i")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 process_mode = 3
@@ -295,7 +292,6 @@ position = Vector2(-230, 564)
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("7_3ocuc")]
 position = Vector2(1777, 1046)
-dialogue = ExtResource("8_jvvfw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint"]
 position = Vector2(1, -2)
@@ -304,7 +300,6 @@ debug_color = Color(0, 0, 0, 0.42)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("7_3ocuc")]
 position = Vector2(3776, 397)
-dialogue = ExtResource("8_jvvfw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint2"]
 position = Vector2(1, -2)
@@ -313,7 +308,6 @@ debug_color = Color(0, 0, 0, 0.42)
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("7_3ocuc")]
 position = Vector2(7353, 390)
-dialogue = ExtResource("8_jvvfw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint3"]
 position = Vector2(1, -2)
@@ -322,7 +316,6 @@ debug_color = Color(0, 0, 0, 0.42)
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("7_3ocuc")]
 position = Vector2(10580, 313)
-dialogue = ExtResource("8_jvvfw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint4"]
 position = Vector2(1, -2)
