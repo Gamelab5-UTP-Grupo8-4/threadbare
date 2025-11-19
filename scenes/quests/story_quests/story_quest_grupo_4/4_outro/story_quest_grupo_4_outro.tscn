@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://b0ih8lqi4dqnx"]
+[gd_scene load_steps=9 format=4 uid="uid://b0ih8lqi4dqnx"]
 
 [ext_resource type="PackedScene" uid="uid://cfcgrfvtn04yp" path="res://scenes/ui_elements/hud/hud.tscn" id="1_0otvx"]
 [ext_resource type="TileSet" uid="uid://07fq3rspk8ia" path="res://scenes/tileset.tres" id="2_g3hv5"]
+[ext_resource type="PackedScene" uid="uid://2wk875viewv0" path="res://scenes/quests/story_quests/story_quest_grupo_4/0_intro/intro_components/tree_idle.tscn" id="3_bogvg"]
 [ext_resource type="SpriteFrames" uid="uid://dc61fd3dh0hqh" path="res://scenes/quests/story_quests/story_quest_grupo_4/player_components/story_quest_grupo_4_player.tres" id="3_g5flg"]
 [ext_resource type="Script" uid="uid://x1mxt6bmei2o" path="res://scenes/ui_elements/cinematic/cinematic.gd" id="4_bogvg"]
+[ext_resource type="PackedScene" uid="uid://uwuyoei2ufa" path="res://scenes/quests/story_quests/story_quest_grupo_4/0_intro/intro_components/tree_moving.tscn" id="4_p2qgc"]
 [ext_resource type="Resource" uid="uid://cm5ywgmy6r5eo" path="res://scenes/quests/story_quests/story_quest_grupo_4/4_outro/outro_components/story_quest_grupo_4_outro.dialogue" id="5_p2qgc"]
+[ext_resource type="PackedScene" uid="uid://v3usqiwy5wpr" path="res://scenes/game_elements/props/decoration/rock/rock.tscn" id="8_gtk5d"]
 
 [node name="Outro" type="Node2D"]
 
@@ -13,9 +16,143 @@
 [node name="TileMapLayers" type="Node2D" parent="."]
 
 [node name="Ground" type="TileMapLayer" parent="TileMapLayers"]
-tile_map_data = PackedByteArray("AAAAAAUAAQAGAAMAAAABAAUAAQAGAAMAAAACAAUAAQAGAAMAAAADAAUAAQAGAAMAAAAEAAUAAQAGAAMAAAAFAAUAAQAGAAMAAAAGAAUAAQAGAAMAAAAHAAUAAQAGAAMAAAAIAAUAAQAGAAMAAAAJAAUAAQAGAAMAAAAKAAUAAQAGAAMAAAALAAUAAQAGAAMAAAAMAAUAAQAGAAMAAAANAAUAAQAGAAMAAAAOAAUAAQAGAAMAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAEAAAABAAYAAQABAAAAAAABAAcAAQABAAEAAAACAAYAAQABAAAAAAACAAcAAQABAAEAAAADAAYAAQABAAAAAAADAAcAAQABAAEAAAAEAAYAAQABAAAAAAAEAAcAAQABAAEAAAAFAAYAAQABAAAAAAAFAAcAAQABAAEAAAAGAAYAAQABAAAAAAAGAAcAAQABAAEAAAAHAAYAAQABAAAAAAAHAAcAAQABAAEAAAAIAAYAAQABAAAAAAAIAAcAAQABAAEAAAAJAAYAAQABAAAAAAAJAAcAAQABAAEAAAAKAAYAAQABAAAAAAAKAAcAAQABAAEAAAALAAYAAQABAAAAAAALAAcAAQABAAEAAAAMAAYAAQABAAAAAAAMAAcAAQABAAEAAAANAAYAAQABAAAAAAANAAcAAQABAAEAAAAOAAYAAQACAAAAAAAOAAcAAQACAAEAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAEAAAABAAEAAQABAAEAAAACAAEAAQABAAEAAAADAAEAAQABAAEAAAADAAIAAQABAAEAAAAEAAIAAQABAAEAAAAFAAIAAQABAAEAAAAFAAMAAQABAAEAAAABAAAAAQABAAAAAAABAAIAAQABAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAQAAQAAAAIAAAABAAMAAQABAAEAAAABAAQAAQABAAIAAAACAAQAAQABAAIAAAACAAMAAQABAAEAAAACAAIAAQABAAEAAAADAAQAAQABAAIAAAADAAMAAQABAAEAAAAEAAMAAQABAAEAAAAEAAQAAQABAAIAAAAFAAQAAQABAAIAAAAGAAQAAQABAAIAAAAHAAQAAQABAAIAAAAIAAQAAQABAAIAAAAJAAQAAQABAAIAAAAKAAQAAQABAAIAAAALAAQAAQABAAIAAAAMAAQAAQABAAIAAAANAAQAAQABAAIAAAAOAAQAAQACAAIAAAAOAAMAAQACAAEAAAAOAAIAAQACAAEAAAAOAAEAAQACAAEAAAAOAAAAAQACAAAAAAANAAAAAQABAAAAAAAMAAAAAQABAAAAAAALAAAAAQABAAAAAAAKAAAAAQABAAAAAAAJAAAAAQABAAAAAAAIAAAAAQABAAAAAAAHAAAAAQABAAAAAAAGAAAAAQABAAAAAAAFAAAAAQABAAAAAAAEAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAEAAQABAAEAAAAFAAEAAQABAAEAAAAGAAEAAQABAAEAAAAHAAEAAQABAAEAAAAIAAEAAQABAAEAAAAJAAEAAQABAAEAAAAKAAEAAQABAAEAAAALAAEAAQABAAEAAAAMAAEAAQABAAEAAAANAAEAAQABAAEAAAANAAIAAQABAAEAAAANAAMAAQABAAEAAAAMAAMAAQABAAEAAAALAAMAAQABAAEAAAAKAAMAAQABAAEAAAAJAAMAAQABAAEAAAAIAAMAAQABAAEAAAAHAAMAAQABAAEAAAAGAAMAAQABAAEAAAAGAAIAAQABAAEAAAAHAAIAAQABAAEAAAAIAAIAAQABAAEAAAAJAAIAAQABAAEAAAAKAAIAAQABAAEAAAALAAIAAQABAAEAAAAMAAIAAQABAAEAAAAAAAgAAQAAAAIAAAABAAgAAQABAAIAAAACAAgAAQABAAIAAAADAAgAAQABAAIAAAAEAAgAAQABAAIAAAAFAAgAAQABAAIAAAAGAAgAAQABAAIAAAAHAAgAAQABAAIAAAAIAAgAAQABAAIAAAAJAAgAAQABAAIAAAAKAAgAAQABAAIAAAALAAgAAQABAAIAAAAMAAgAAQABAAIAAAANAAgAAQABAAIAAAAOAAgAAQACAAIAAAA=")
+tile_map_data = PackedByteArray("AAAAAAUAAQAGAAMAAAABAAUAAQAGAAMAAAACAAUAAQAGAAMAAAADAAUAAQAGAAMAAAAEAAUAAQAGAAMAAAAFAAUAAQAGAAMAAAAGAAUAAQAGAAMAAAAHAAUAAQAGAAMAAAAIAAUAAQAGAAMAAAAJAAUAAQAGAAMAAAAKAAUAAQAGAAMAAAALAAUAAQAGAAMAAAAMAAUAAQAGAAMAAAANAAUAAQAGAAMAAAAOAAUAAQAGAAMAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAEAAAABAAYAAQABAAAAAAABAAcAAQABAAEAAAACAAYAAQABAAAAAAACAAcAAQABAAEAAAADAAYAAQABAAAAAAADAAcAAQABAAEAAAAEAAYAAQABAAAAAAAEAAcAAQABAAEAAAAFAAYAAQABAAAAAAAFAAcAAQABAAEAAAAGAAYAAQABAAAAAAAGAAcAAQABAAEAAAAHAAYAAQABAAAAAAAHAAcAAQABAAEAAAAIAAYAAQABAAAAAAAIAAcAAQABAAEAAAAJAAYAAQABAAAAAAAJAAcAAQABAAEAAAAKAAYAAQABAAAAAAAKAAcAAQABAAEAAAALAAYAAQABAAAAAAALAAcAAQABAAEAAAAMAAYAAQABAAAAAAAMAAcAAQABAAEAAAANAAYAAQABAAAAAAANAAcAAQABAAEAAAAOAAYAAQACAAAAAAAOAAcAAQACAAEAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAEAAAABAAEAAQABAAIAAAACAAEAAQABAAIAAAADAAEAAQABAAEAAAADAAIAAQAAAAIAAAAEAAIAAQABAAEAAAAFAAIAAQABAAEAAAAFAAMAAQABAAEAAAABAAAAAQABAAAAAAABAAIAAAAAAAAAAAAAAAIAAQACAAIAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAACAAMAAAAAAAAAAAACAAIAAAAAAAAAAAADAAQAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAQAAAAIAAAAEAAQAAAAAAAAAAAAFAAQAAQAAAAEAAAAGAAQAAQABAAEAAAAHAAQAAQABAAEAAAAIAAQAAQABAAEAAAAJAAQAAQABAAIAAAAKAAQAAQABAAIAAAALAAQAAQABAAIAAAAMAAQAAQABAAIAAAANAAQAAQABAAIAAAAOAAQAAQACAAIAAAAOAAMAAQACAAEAAAAOAAIAAQACAAEAAAAOAAEAAQACAAEAAAAOAAAAAQACAAAAAAANAAAAAQABAAAAAAAMAAAAAQABAAAAAAALAAAAAQABAAAAAAAKAAAAAQABAAAAAAAJAAAAAQABAAAAAAAIAAAAAQABAAAAAAAHAAAAAQABAAAAAAAGAAAAAQABAAAAAAAFAAAAAQABAAAAAAAEAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAEAAQABAAEAAAAFAAEAAQABAAEAAAAGAAEAAQABAAEAAAAHAAEAAQABAAEAAAAIAAEAAQABAAEAAAAJAAEAAQABAAEAAAAKAAEAAQABAAEAAAALAAEAAQABAAEAAAAMAAEAAQABAAEAAAANAAEAAQABAAEAAAANAAIAAQABAAEAAAANAAMAAQABAAEAAAAMAAMAAQABAAEAAAALAAMAAQABAAEAAAAKAAMAAQABAAEAAAAJAAMAAQABAAEAAAAIAAMAAQABAAEAAAAHAAMAAQABAAEAAAAGAAMAAQABAAEAAAAGAAIAAQABAAEAAAAHAAIAAQABAAEAAAAIAAIAAQABAAEAAAAJAAIAAQABAAEAAAAKAAIAAQABAAEAAAALAAIAAQABAAEAAAAMAAIAAQABAAEAAAAAAAgAAQAAAAIAAAABAAgAAQABAAIAAAACAAgAAQABAAIAAAADAAgAAQABAAIAAAAEAAgAAQABAAIAAAAFAAgAAQABAAIAAAAGAAgAAQABAAIAAAAHAAgAAQABAAIAAAAIAAgAAQABAAIAAAAJAAgAAQABAAIAAAAKAAgAAQABAAIAAAALAAgAAQABAAIAAAAMAAgAAQABAAIAAAANAAgAAQABAAIAAAAOAAgAAQACAAIAAAA=")
 tile_set = ExtResource("2_g3hv5")
 metadata/_edit_lock_ = true
+
+[node name="Arboles" type="Node2D" parent="TileMapLayers/Ground"]
+
+[node name="Tree" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(64.00001, 85)
+scale = Vector2(1.0356979, 1.0893644)
+
+[node name="Tree12" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(383, 52)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree2" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(141, 95)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree13" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(404, 207)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree3" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(210, 85)
+scale = Vector2(1.0356979, 1.0893644)
+
+[node name="Tree11" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(335, 85)
+scale = Vector2(1.0356979, 1.0893644)
+
+[node name="Tree4" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(287, 60)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree5" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(396, 94)
+scale = Vector2(1.0356979, 1.0893644)
+
+[node name="Tree6" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(473, 69)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree7" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(536, 87)
+scale = Vector2(1.0356979, 1.0893644)
+
+[node name="Tree8" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(613, 62)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree9" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(660, 87)
+scale = Vector2(1.0356979, 1.0893644)
+
+[node name="Tree10" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(277, 172)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree14" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(92.00001, 644)
+scale = Vector2(1.0356979, 1.0893644)
+
+[node name="Tree15" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(169, 619)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree16" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(606, 612)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree17" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(18, 578)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree18" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(238, 644)
+scale = Vector2(1.0356979, 1.0893644)
+
+[node name="Tree19" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(394, 625)
+scale = Vector2(1.0356979, 1.0893644)
+
+[node name="Tree20" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(315, 619)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree21" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(442, 597)
+scale = Vector2(1.0356979, 1.0893644)
+
+[node name="Tree22" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(522, 605)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree23" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(697, 628)
+scale = Vector2(1.0356979, 1.0893644)
+
+[node name="Tree24" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(841, 613)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree25" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(771, 642)
+scale = Vector2(1.0356979, 1.0893644)
+
+[node name="Tree26" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(918, 629)
+scale = Vector2(1.2664388, 1.1650094)
+
+[node name="Tree27" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(939, 190)
+scale = Vector2(1.6038672, 1.3572469)
+
+[node name="Tree28" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(498, 157)
+scale = Vector2(1.6038673, 1.3572469)
+
+[node name="Tree29" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(10, 147)
+scale = Vector2(1.3116481, 1.2691197)
+
+[node name="Tree30" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(611.9795, 176.80515)
+scale = Vector2(1.6038673, 1.3572469)
+
+[node name="Tree31" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(691.76514, 197.77533)
+scale = Vector2(1.3116481, 1.2691197)
+
+[node name="Tree32" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("4_p2qgc")]
+position = Vector2(789.28094, 168.65009)
+scale = Vector2(1.6038673, 1.3572469)
+
+[node name="Tree33" parent="TileMapLayers/Ground/Arboles" instance=ExtResource("3_bogvg")]
+position = Vector2(861, 205)
+scale = Vector2(1.3116481, 1.2691197)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(153, 366)
@@ -31,7 +168,7 @@ editor_draw_limits = true
 y_sort_enabled = true
 
 [node name="Character" type="AnimatedSprite2D" parent="OnTheGround"]
-position = Vector2(400, 349)
+position = Vector2(264, 302)
 sprite_frames = ExtResource("3_g5flg")
 animation = &"idle"
 autoplay = "idle"
@@ -43,3 +180,12 @@ script = ExtResource("4_bogvg")
 dialogue = ExtResource("5_p2qgc")
 next_scene = "uid://cufkthb25mpxy"
 metadata/_custom_type_script = "uid://x1mxt6bmei2o"
+
+[node name="Rock2" parent="." instance=ExtResource("8_gtk5d")]
+position = Vector2(582, 274)
+
+[node name="Rock2" parent="Rock2" instance=ExtResource("8_gtk5d")]
+position = Vector2(312, 134)
+
+[node name="Rock3" parent="Rock2" instance=ExtResource("8_gtk5d")]
+position = Vector2(536, 199)

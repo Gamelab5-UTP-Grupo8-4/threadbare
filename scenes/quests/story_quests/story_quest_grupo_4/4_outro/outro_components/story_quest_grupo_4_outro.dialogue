@@ -1,7 +1,8 @@
 # SPDX-FileCopyrightText: The Threadbare Authors
 # SPDX-License-Identifier: MPL-2.0
 ~ start
-You've made it to the closing scene!
-This is where you will tie up the loose ends of your story.
-Let's go back to Fray's End so you can return these threads to the Eternal Loom...
+El mago exhausto, pero libre, contempla el cielo nocturno.
+Aunque escapó de la mazmorra, sabe que la reliquia sigue en manos oscuras.
+Su viaje no ha terminado.
+“He escapado de las sombras… pero el tiempo aún no me pertenece.”
 => END
