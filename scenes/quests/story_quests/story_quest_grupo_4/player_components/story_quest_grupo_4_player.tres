@@ -1,8 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://dc61fd3dh0hqh"]
+[gd_resource type="SpriteFrames" load_steps=25 format=3 uid="uid://dc61fd3dh0hqh"]
 
 [ext_resource type="Texture2D" uid="uid://ckliwgt7fqpi7" path="res://scenes/quests/story_quests/story_quest_grupo_4/player_components/Mago-final-attack-192x192.png" id="1_syu1g"]
+[ext_resource type="Texture2D" uid="uid://cxuvmunc8f2n" path="res://scenes/quests/story_quests/story_quest_grupo_4/player_components/Mago-defeated-Sheet.png" id="2_n63oe"]
 [ext_resource type="Texture2D" uid="uid://mytefn4vriue" path="res://scenes/quests/story_quests/story_quest_grupo_4/player_components/Mago-final-idle-192x192.png" id="3_gob1s"]
-[ext_resource type="Texture2D" uid="uid://nspr431jkn3m" path="res://scenes/quests/story_quests/story_quest_grupo_4/player_components/story_quest_grupo_4_player_defeated.png" id="3_qpf6l"]
 [ext_resource type="Texture2D" uid="uid://fgxdmyixspqg" path="res://scenes/quests/story_quests/story_quest_grupo_4/player_components/Mago-final-walk-192x192.png" id="5_qpf6l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l7n4q"]
@@ -29,13 +29,25 @@ region = Rect2(768, 0, 192, 192)
 atlas = ExtResource("1_syu1g")
 region = Rect2(960, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cu6lk"]
-atlas = ExtResource("3_qpf6l")
+[sub_resource type="AtlasTexture" id="AtlasTexture_syu1g"]
+atlas = ExtResource("2_n63oe")
 region = Rect2(0, 0, 192, 192)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_icahe"]
-atlas = ExtResource("3_qpf6l")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gob1s"]
+atlas = ExtResource("2_n63oe")
 region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpf6l"]
+atlas = ExtResource("2_n63oe")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu3r7"]
+atlas = ExtResource("2_n63oe")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83t6e"]
+atlas = ExtResource("2_n63oe")
+region = Rect2(768, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i8qka"]
 atlas = ExtResource("3_gob1s")
@@ -100,37 +112,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cu6lk")
+"texture": SubResource("AtlasTexture_syu1g")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_icahe")
+"texture": SubResource("AtlasTexture_gob1s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cu6lk")
+"texture": SubResource("AtlasTexture_qpf6l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_icahe")
+"texture": SubResource("AtlasTexture_hu3r7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cu6lk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_icahe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cu6lk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_icahe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cu6lk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_icahe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cu6lk")
+"texture": SubResource("AtlasTexture_83t6e")
 }],
 "loop": true,
 "name": &"defeated",
@@ -168,6 +162,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qhn0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhn0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0peo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf3sc")
 }],
 "loop": true,
 "name": &"walk",

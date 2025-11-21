@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nspr431jkn3m"
-path="res://.godot/imported/story_quest_grupo_4_player_defeated.png-78324b0b46ac6387668da589b461ffe3.ctex"
+uid="uid://cxuvmunc8f2n"
+path="res://.godot/imported/Mago-defeated-Sheet.png-268f4fc747b8f39c531194aa471f3dd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/quests/story_quests/story_quest_grupo_4/player_components/story_quest_grupo_4_player_defeated.png"
-dest_files=["res://.godot/imported/story_quest_grupo_4_player_defeated.png-78324b0b46ac6387668da589b461ffe3.ctex"]
+source_file="res://scenes/quests/story_quests/story_quest_grupo_4/player_components/Mago-defeated-Sheet.png"
+dest_files=["res://.godot/imported/Mago-defeated-Sheet.png-268f4fc747b8f39c531194aa471f3dd6.ctex"]
 
 [params]
 
